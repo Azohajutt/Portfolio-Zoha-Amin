@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =====CONSOLIDATED CSS===== -->
+    <link rel="stylesheet" href="assets/css/main-3d.css">
+
+    <!-- =====MODERN GOOGLE FONTS===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- =====BOX ICONS===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Zoha Amin | AI Engineer</title>
+</head>
+
+<body>
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    <!-- AI Background Canvases -->
+    <canvas id="neural-canvas" class="neural-canvas"></canvas>
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+
+    <!-- Main 3D Container -->
+    <div class="portfolio-3d-container">
+
+        <!-- Tab Navigation -->
+        <nav class="tab-navigation">
+            <button class="tab-btn active" data-tab="profile">
+                <i class='bx bx-home-alt'></i>
+                <span>Profile</span>
+            </button>
+            <button class="tab-btn" data-tab="experience">
+                <i class='bx bx-briefcase-alt'></i>
+                <span>Experience</span>
+            </button>
+            <button class="tab-btn" data-tab="skills">
+                <i class='bx bx-code-alt'></i>
+                <span>Skills</span>
+            </button>
+            <button class="tab-btn" data-tab="projects">
+                <i class='bx bx-folder'></i>
+                <span>Projects</span>
+            </button>
+        </nav>
+
+        <!-- Tab Contents -->
+        <div class="tab-container">
+
+            <!-- PROFILE TAB - NEW LAYOUT: Info Left | Video Center | Image Right -->
+            <div id="profile-tab" class="tab-content active">
+                <div class="profile-content">
+
+                    <!-- LEFT: Profile Info Card -->
+                    <div class="profile-left">
+                        <div class="profile-info card-3d">
+                            <!-- Title/Subtitle moved to Video Container -->
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/zoha-amin/" target="_blank"
+                                    class="social-icon floating">
+                                    <i class='bx bxl-linkedin'></i>
+                                </a>
+                                <a href="https://github.com/Azohajutt?tab=repositories" target="_blank"
+                                    class="social-icon floating">
+                                    <i class='bx bxl-github'></i>
+                                </a>
+                                <a href="mailto:azoha6966@gmail.com" class="social-icon floating">
+                                    <i class='bx bx-envelope'></i>
+                                </a>
+                            </div>
+                            <p class="profile-description">
+                                AI Engineer specializing in Generative AI, Agentic AI, and Computer Vision to build
+                                leading, intelligent solutions and integrate cutting-edge AI for real-world
+                                applications.
+                            </p>
+
+                            <div class="profile-actions">
+                                <a href="assets/cv/Zoha_Amin_Resume.pdf" download class="btn-primary btn-3d">
+                                    <i class='bx bx-download'></i>
+                                    Download CV
+                                </a>
+                                <a href="#projects" class="btn-secondary btn-3d" onclick="switchTabManual('projects')">
+                                    View Projects
+                                    <i class='bx bx-right-arrow-alt'></i>
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- CENTER: AI Video (BIGGER) -->
+                    <div class="profile-center">
+                        <div class="ai-video-container floating" style="animation-delay: 0.2s">
+                            <!-- Overlay Text -->
+                            <div class="video-overlay-text">
+                                <h1 class="profile-title">
+                                    <span class="greeting">Hi, I'm</span>
+                                    <span class="name-highlight">Zoha Amin</span>
+                                </h1>
+                                <h2 class="profile-subtitle">
+                                    <span class="typewriter-text">AI Engineer</span>
+                                    <span class="cursor">|</span>
+                                </h2>
+                            </div>
+
+                            <video autoplay loop muted playsinline>
+                                <source src="assets/img/AI_bg.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-label">
+                                <i class='bx bx-brain'></i> AI in Action
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Profile Image -->
+                    <div class="profile-right floating">
+                        <div class="profile-blob-container">
+                            <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0" mask-type="alpha">
+                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                                    130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                                    97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                                    0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                                </mask>
+                                <g mask="url(#mask0)">
+                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                                    165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                                    129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                                    -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                                    <!-- Use Zoha.png, updated from Me2.png -->
+                                    <image class="home__blob-img" x="12" y="18" href="assets/img/Zoha.png"
+                                        loading="eager" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- EXPERIENCE TAB -->
+            <div id="experience-tab" class="tab-content">
+                <div class="experience-content">
+                    <h2 class="section-title floating">
+                        <i class='bx bx-briefcase title-icon'></i>
+                        Experience Journey
+                    </h2>
+
+                    <div class="timeline-container">
+                        <!-- 7 Kings Code -->
+                        <div class="experience-card card-3d floating" style="animation-delay: 0.1s">
+                            <div class="exp-header">
+                                <div class="exp-company">
+                                    <h3>7 Kings Code</h3>
+                                    <span class="exp-badge current">Current</span>
+                                </div>
+                                <span class="exp-period">September 2025 - Present</span>
+                            </div>
+                            <h4 class="exp-position">AI Engineer</h4>
+                            <p class="exp-location"><i class='bx bx-map'></i> On Site - Lahore</p>
+                            <ul class="exp-highlights">
+                                <li>Developed end-to-end AI solutions integrating Computer Vision and NLP for real-world
+                                    applications</li>
+                                <li>Built gaze tracking and facial expression detection systems using deep learning
+                                    techniques</li>
+                                <li>Designed and implemented medical RAG-based chatbots with LLM integration</li>
+                                <li>Performed fine-tuning of AI/ML models for domain-specific performance improvement
+                                </li>
+                                <li>Created resume parsing and CV-to-job matching systems using semantic similarity
+                                    techniques</li>
+                                <li>Developed an AI recruitment agent for automated candidate screening and shortlisting
+                                </li>
+                                <li>Integrated AI models with FastAPI for scalable backend communication and real-time
+                                    inference</li>
+                                <li>Collaborated with cross-functional teams to deploy scalable, production-ready AI
+                                    systems</li>
+                            </ul>
+                        </div>
+
+                        <!-- SabaSoft Games Studio -->
+                        <div class="experience-card card-3d floating" style="animation-delay: 0.2s">
+                            <div class="exp-header">
+                                <div class="exp-company">
+                                    <h3>SabaSoft Games Studio</h3>
+                                </div>
+                                <span class="exp-period">March 2025 - September 2025</span>
+                            </div>
+                            <h4 class="exp-position">Associate AI Engineer</h4>
+                            <p class="exp-location"><i class='bx bx-map'></i> On Site - Lahore, Punjab, Pakistan</p>
+                            <ul class="exp-highlights">
+                                <li>Worked on AI-driven mechanics for puzzle-based games focusing on logic and decision
+                                    systems</li>
+                                <li>Implemented intelligent AI behaviors to enhance gameplay interaction and user
+                                    engagement</li>
+                                <li>Contributed to an AI-based physics engine simulating realistic movement and
+                                    collisions</li>
+                                <li>Optimized AI logic and physics computations for performance and smooth gameplay</li>
+                                <li>Tested and debugged AI systems to improve stability and responsiveness</li>
+                            </ul>
+                        </div>
+
+                        <!-- Education -->
+                        <div class="experience-card card-3d education-card floating" style="animation-delay: 0.3s">
+                            <div class="exp-header">
+                                <div class="exp-company">
+                                    <h3><i class='bx bxs-graduation'></i> Islamia University of Bahawalpur</h3>
+                                </div>
+                            </div>
+                            <h4 class="exp-position">Bachelor of Science - IT, Information Technology</h4>
+                            <p class="exp-location">IT Department</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SKILLS TAB -->
+            <div id="skills-tab" class="tab-content">
+                <div class="skills-content">
+                    <h2 class="section-title floating">
+                        <i class='bx bx-code-block title-icon'></i>
+                        Technical Arsenal
+                    </h2>
+
+                    <div class="skills-grid">
+                        <!-- AI & General -->
+                        <div class="skill-category card-3d floating">
+                            <div class="skill-icon"><i class='bx bx-brain'></i></div>
+                            <h3>AI & Agentic Systems</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Generative AI</span>
+                                <span class="skill-tag">Agentic Systems</span>
+                                <span class="skill-tag">Chatbots</span>
+                                <span class="skill-tag">LLMs</span>
+                                <span class="skill-tag">LangChain</span>
+                                <span class="skill-tag">RAG</span>
+                            </div>
+                        </div>
+
+                        <!-- Computer Vision -->
+                        <div class="skill-category card-3d floating" style="animation-delay: 0.1s">
+                            <div class="skill-icon"><i class='bx bx-show'></i></div>
+                            <h3>Computer Vision</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Computer Vision</span>
+                                <span class="skill-tag">ResNet</span>
+                                <span class="skill-tag">MTCNN</span>
+                                <span class="skill-tag">Image Processing</span>
+                                <span class="skill-tag">Gaze Tracking</span>
+                                <span class="skill-tag">Facial Expression</span>
+                            </div>
+                        </div>
+
+                        <!-- Machine Learning -->
+                        <div class="skill-category card-3d floating" style="animation-delay: 0.2s">
+                            <div class="skill-icon"><i class='bx bx-scatter-chart'></i></div>
+                            <h3>Machine & Deep Learning</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Machine Learning</span>
+                                <span class="skill-tag">Deep Learning</span>
+                                <span class="skill-tag">PyTorch</span>
+                                <span class="skill-tag">Fine-Tuning</span>
+                                <span class="skill-tag">FAISS</span>
+                                <span class="skill-tag">Embeddings</span>
+                            </div>
+                        </div>
+
+                        <!-- Backend & Data Processing -->
+                        <div class="skill-category card-3d floating" style="animation-delay: 0.3s">
+                            <div class="skill-icon"><i class='bx bx-server'></i></div>
+                            <h3>Backend & Inference</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">FastAPI</span>
+                                <span class="skill-tag">Flask</span>
+                                <span class="skill-tag">Backend Integration</span>
+                                <span class="skill-tag">Real-Time Inference</span>
+                                <span class="skill-tag">Model Deployment</span>
+                                <span class="skill-tag">Data Preprocessing</span>
+                                <span class="skill-tag">Docker</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECTS TAB -->
+            <div id="projects-tab" class="tab-content">
+                <div class="projects-content">
+                    <h2 class="section-title floating">
+                        <i class='bx bx-rocket title-icon'></i>
+                        Featured Projects
+                    </h2>
+
+                    <!-- Projects Grid dynamically mapped and simplified without external imagery -->
+                    <div class="projects-grid">
+
+                        <!-- Project 1: Medical Chatbot -->
+                        <div class="project-card card-3d floating">
+                            <div class="project-image"
+                                style="display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.03); height: 200px; font-size: 5rem; color: var(--first-color);">
+                                <i class='bx bx-plus-medical'></i>
+                                <div class="project-overlay">
+                                    <span class="project-tag">HealthTech</span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Medical RAG-Based AI Chatbot</h3>
+                                <p class="project-desc">
+                                    Retrieval-Augmented Generation (RAG) system with LLM integration for medical
+                                    queries. Uses structured pipelines for symptom extraction and contextual reasoning,
+                                    with domain-specific fine-tuning.
+                                </p>
+                                <div class="project-tech">
+                                    <span>LangChain</span>
+                                    <span>RAG</span>
+                                    <span>LLM</span>
+                                </div>
+                                <a href="https://github.com/Azohajutt/Voice-Medical-Chatbot" class="project-link"
+                                    target="_blank">
+                                    <i class='bx bxl-github'></i> View Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: AI Recruitment Calling Agent -->
+                        <div class="project-card card-3d floating" style="animation-delay: 0.1s">
+                            <div class="project-image"
+                                style="display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.03); height: 200px; font-size: 5rem; color: var(--first-color);">
+                                <i class='bx bx-phone-call'></i>
+                                <div class="project-overlay">
+                                    <span class="project-tag">HR Tech</span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3>AI Recruitment Calling Agent</h3>
+                                <p class="project-desc">
+                                    AI-powered recruitment agent capable of automated candidate interaction and
+                                    screening. Utilizes intelligent response handling and robust candidate ranking
+                                    workflows.
+                                </p>
+                                <div class="project-tech">
+                                    <span>Agentic Systems</span>
+                                    <span>NLP</span>
+                                </div>
+                                <a href="#" class="project-link" target="_blank"
+                                    style="pointer-events: none; opacity: 0.5;">
+                                    <i class='bx bxl-github'></i> Private Repo
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: Eye Gaze Tracking & Facial Exp -->
+                        <div class="project-card card-3d floating" style="animation-delay: 0.2s">
+                            <div class="project-image"
+                                style="display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.03); height: 200px; font-size: 5rem; color: var(--first-color);">
+                                <i class='bx bx-face'></i>
+                                <div class="project-overlay">
+                                    <span class="project-tag">Computer Vision</span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Eye Gaze & Facial Expression</h3>
+                                <p class="project-desc">
+                                    Real-time deep learning gaze tracking and facial expression recognition. Detects 7
+                                    emotion classes with 80% accuracy using ResNet-18 transfer learning and MTCNN.
+                                </p>
+                                <div class="project-tech">
+                                    <span>ResNet-18</span>
+                                    <span>PyTorch</span>
+                                    <span>Docker</span>
+                                </div>
+                                <a href="https://github.com/Azohajutt/Facial-Expression-Recognition"
+                                    class="project-link" target="_blank">
+                                    <i class='bx bxl-github'></i> View Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Project 4: CV-to-Job Match -->
+                        <div class="project-card card-3d floating" style="animation-delay: 0.3s">
+                            <div class="project-image"
+                                style="display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.03); height: 200px; font-size: 5rem; color: var(--first-color);">
+                                <i class='bx bx-file-find'></i>
+                                <div class="project-overlay">
+                                    <span class="project-tag">NLP</span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3>CV-to-Job Matching System</h3>
+                                <p class="project-desc">
+                                    Embedding-based semantic similarity engine for intelligent resume-job alignment.
+                                    Uses FAISS vector stores and RAG approach to shortlist resumes based on job
+                                    descriptions.
+                                </p>
+                                <div class="project-tech">
+                                    <span>FAISS</span>
+                                    <span>Embeddings</span>
+                                    <span>RAG</span>
+                                </div>
+                                <a href="https://github.com/Azohajutt/CV-Shortlister" class="project-link"
+                                    target="_blank">
+                                    <i class='bx bxl-github'></i> View Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Project 5: Financial Chatbot -->
+                        <div class="project-card card-3d floating" style="animation-delay: 0.4s">
+                            <div class="project-image"
+                                style="display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.03); height: 200px; font-size: 5rem; color: var(--first-color);">
+                                <i class='bx bx-line-chart'></i>
+                                <div class="project-overlay">
+                                    <span class="project-tag">FinTech</span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Financial Chatbot</h3>
+                                <p class="project-desc">
+                                    Designed a powerful financial chatbot for seamlessly handling queries, interactions,
+                                    and tasks related to the finance domain using Python.
+                                </p>
+                                <div class="project-tech">
+                                    <span>Python</span>
+                                    <span>Chatbots</span>
+                                    <span>AI</span>
+                                </div>
+                                <a href="https://github.com/Azohajutt/Financial-Chatbot" class="project-link"
+                                    target="_blank">
+                                    <i class='bx bxl-github'></i> View Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Project 6: Research Paper Analyzer -->
+                        <div class="project-card card-3d floating" style="animation-delay: 0.5s">
+                            <div class="project-image"
+                                style="display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.03); height: 200px; font-size: 5rem; color: var(--first-color);">
+                                <i class='bx bx-book-reader'></i>
+                                <div class="project-overlay">
+                                    <span class="project-tag">Document AI</span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Research Paper Analyzer</h3>
+                                <p class="project-desc">
+                                    Created an advanced application for analyzing multiple research papers through
+                                    NLP-based extraction, sophisticated summarization, and data structuring.
+                                </p>
+                                <div class="project-tech">
+                                    <span>NLP</span>
+                                    <span>Python</span>
+                                </div>
+                                <a href="https://github.com/Azohajutt/Research-Paper-Analyzer" class="project-link"
+                                    target="_blank">
+                                    <i class='bx bxl-github'></i> View Code
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/neural-network.js"></script>
+    <script src="assets/js/particle-system.js"></script>
+    <script src="assets/js/3d-interactions.js"></script>
+
+    <script>
+        // Helper function for manual tab switching
+        function switchTabManual(tabName) {
+            const event = new MouseEvent('click', { bubbles: true });
+            document.querySelector(`[data-tab="${tabName}"]`).dispatchEvent(event);
+        }
+    </script>
+</body>
+
+</html>
