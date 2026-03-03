@@ -1,47 +1,60 @@
-# Fazeel Asghar's Portfolio
+# Zoha Amin's Portfolio
 
-Welcome to my online portfolio! I am Fazeel Asghar, an enthusiastic IT student at Islamia University Bahawalpur with a passion for technology, machine learning, and space. This portfolio showcases my projects, skills, and professional journey.
+Welcome to my professional portfolio! I am **Zoha Amin**, an AI Engineer specializing in Generative AI, Agentic Systems, and Computer Vision. I am dedicated to building intelligent, scalable AI solutions that solve real-world problems.
 
-## About Me
+## 🚀 About Me
 
-I am dedicated to pursuing a Bachelor of Science in Information Technology, with a focus on Machine Learning, Deep Learning, IoT Projects, Python Programming, and Data Analysis. My journey in technology is driven by curiosity and a drive for innovation, especially in Space Technology.
+I am currently working as an **AI Engineer at 7 Kings Code, Lahore**. My expertise lies at the intersection of NLP and Computer Vision, where I design and deploy end-to-end AI systems including RAG-based chatbots, gaze tracking systems, and automated recruitment agents.
 
-### Key Interests
-- **Space Technology**
-- **Machine Learning & Deep Learning**
-- **Python Programming**
-- **IoT Projects**
+### 🎯 Key Specializations
+- **Generative AI & LLMs:** RAG pipelines, Fine-tuning, LangChain.
+- **Agentic AI:** Autonomous task handling and multi-agent workflows.
+- **Computer Vision:** Expression recognition, gaze tracking, MTCNN, ResNet.
+- **Backend & Deployment:** FastAPI, Flask, Docker, Real-time inference.
 
-## Projects
+## 🛠️ Technical Arsenal
 
-Here are some of the key projects I've worked on, which you can find on my repos as well:
+- **AI Frameworks:** PyTorch, TensorFlow, LangChain, FAISS.
+- **Development:** Python, FastAPI, Flask, Docker.
+- **Computer Vision:** OpenCV, MTCNN, ResNet-18, Gaze Estimation.
+- **Data & MLOps:** Model Fine-tuning, Data Preprocessing, Semantic Similarity.
 
-### 1. Smart Wheelchair Project
-A smart wheelchair prototype equipped with object detection and vital signs monitoring capabilities. The project integrates computer vision and machine learning to enhance mobility and safety.
+## 📂 Featured Projects
 
-### 2. Tumor Detection Using Computer Vision
-Developed a model to detect tumors through computer vision, using threshold and contour detection techniques to identify and narrow down tumor regions.
+### 1. Medical RAG-Based AI Chatbot
+A Retrieval-Augmented Generation (RAG) system with LLM integration for medical queries. Features structured symptom extraction and domain-specific fine-tuning.
+[View Code](https://github.com/Azohajutt/Voice-Medical-Chatbot)
 
-### 3. Skin Disease Classification
-Created a skin disease classification system using Convolutional Neural Networks (CNN) and TensorFlow. The project classifies melanoma and seborrheic dermatitis, with a front end developed using Django.
+### 2. Eye Gaze Tracking & Facial Expression System
+A real-time deep learning system that detects 7 emotion classes with 80% accuracy using ResNet-18 transfer learning. Includes MTCNN face detection and Pytorch-based inference.
+[View Code](https://github.com/Azohajutt/Facial-Expression-Recognition)
 
-### 4. FaceMesh Application
-Implemented FaceMesh using MediaPipe to analyze facial features.
+### 3. AI Recruitment Calling Agent
+An automated recruitment agent designed for candidate interaction, response handling, and ranking workflows.
 
-## Skills
+### 4. CV-to-Job Description Matching System
+An embedding-based semantic similarity engine using FAISS vector stores to shortlist resumes based on job descriptions.
+[View Code](https://github.com/Azohajutt/CV-Shortlister)
 
-- **Programming Languages:** Python, C++
-- **Machine Learning & Deep Learning:** TensorFlow, CNN
-- **Web Development:** HTML5, CSS3, Django
-- **Computer Vision:** MediaPipe, OpenCV, Cvzone
-- **IoT Technologies:** Arduino, Raspberry Pi
+### 5. Financial & Research Paper Chatbots
+Specialized AI tools for financial query handling and automated research paper analysis and summarization.
 
-## Professional Experience
+## 💼 Experience
 
-- **Internship:** Completed an internship sponsored by the European Union under the Safe-RH Erasmus Plus program at the University of the West of Scotland, where I proposed a Smart Wheelchair project.
+- **7 Kings Code | AI Engineer (Sept 2025 – Present)**
+  - Development of CV-to-Job matching, recruitment agents, and gaze tracking systems.
+- **SabaSoft Games Studio | Associate AI Engineer (March 2025 – Sept 2025)**
+  - AI-driven mechanics and intelligent behaviors for puzzle-based physics engines.
 
-## Contact
+## 🎓 Education
 
-Feel free to connect with me on [LinkedIn](www.linkedin.com/in/fazeelaiml) or reach out via email at fasghar40@gmail.com for any inquiries or collaborations.
+- **Islamia University of Bahawalpur**
+  - Bachelor of Science in Information Technology (BS-IT)
+
+## 🌐 Connect with Me
+
+- **LinkedIn:** [linkedin.com/in/zoha-amin](https://www.linkedin.com/in/zoha-amin/)
+- **GitHub:** [github.com/Azohajutt](https://github.com/Azohajutt?tab=repositories)
+- **Email:** azoha6966@gmail.com
 
 Thank you for visiting my portfolio!
