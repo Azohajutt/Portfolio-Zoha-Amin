@@ -188,11 +188,12 @@ class Portfolio3D {
 
     initializeTypewriter() {
         const titles = [
-            'Lead AI Engineer',
+            'AI Engineer',
             'MLOps Specialist',
-            'Robotics Developer',
+            'Computer Vision Developer',
             'Voice Agent Expert',
-            'GenAI Architect'
+            'GenAI Architect',
+            'Agentic AI Developer'
         ];
 
         let titleIndex = 0;
