@@ -1,0 +1,38 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+/build
+
+# misc
+.DS_Store
+*.pem
+.vs/
+.vscode/
+
+# debug
+npm-debug.log*
+
+# env files
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# local inbox fallback
+.data/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# raw photos dropped in the repo root
+/*.jpeg
+/*.jpg
+/*.webp
+/*.pdf
