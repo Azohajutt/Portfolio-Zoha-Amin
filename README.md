@@ -1,4 +1,4 @@
-# Zoha Amin — Portfolio v2
+# Zoha Amin — Portfolio
 
 Production portfolio for **Zoha Amin**, AI Engineer (Voice AI, Agentic Systems, RAG, Computer Vision).
 
