@@ -43,64 +43,69 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const id = randomUUID();
-  const createdAt = new Date().toISOString();
-  const ipHash = hashIp(ip);
-  let savedRemotely = false;
+  try {
+    const id = randomUUID();
+    const createdAt = new Date().toISOString();
+    const ipHash = hashIp(ip);
+    let savedRemotely = false;
 
-  if (hasSupabaseServiceConfig()) {
-    const supabase = createServiceClient();
-    const { error } = await supabase.from("contact_messages").insert({
+    if (hasSupabaseServiceConfig()) {
+      const supabase = createServiceClient();
+      const { error } = await supabase.from("contact_messages").insert({
+        id,
+        name: body.name,
+        email: body.email,
+        message: body.message,
+        ip_hash: ipHash,
+        status: "new",
+        created_at: createdAt,
+      });
+
+      if (!error) {
+        savedRemotely = true;
+      } else {
+        console.error("contact insert failed, using local inbox", error.message);
+      }
+    }
+
+    saveLocalContactMessage({
       id,
       name: body.name,
       email: body.email,
       message: body.message,
       ip_hash: ipHash,
-      status: "new",
       created_at: createdAt,
     });
 
-    if (!error) {
-      savedRemotely = true;
-    } else {
-      console.error("contact insert failed, using local inbox", error.message);
+    const emailResult = await sendContactEmail({
+      name: body.name,
+      email: body.email,
+      message: body.message,
+    });
+
+    if (!emailResult.ok && !emailResult.skipped) {
+      return NextResponse.json(
+        {
+          error:
+            "Message was saved to your inbox, but email delivery failed. Check RESEND_API_KEY / sender settings.",
+        },
+        { status: 502 },
+      );
     }
+
+    if (emailResult.skipped) {
+      console.warn("Contact saved, but email skipped: RESEND_API_KEY missing");
+    }
+
+    return NextResponse.json({
+      ok: true,
+      storage: savedRemotely ? "supabase+local" : "local",
+      emailed: emailResult.ok,
+    });
+  } catch (error) {
+    console.error("contact handler failed", error);
+    return NextResponse.json({ error: "Could not send the message. Please email me instead." }, { status: 500 });
   }
-
-  saveLocalContactMessage({
-    id,
-    name: body.name,
-    email: body.email,
-    message: body.message,
-    ip_hash: ipHash,
-    created_at: createdAt,
-  });
-
-  const emailResult = await sendContactEmail({
-    name: body.name,
-    email: body.email,
-    message: body.message,
-  });
-
-  if (!emailResult.ok && !emailResult.skipped) {
-    return NextResponse.json(
-      {
-        error:
-          "Message was saved to your inbox, but email delivery failed. Check RESEND_API_KEY / sender settings.",
-      },
-      { status: 502 },
-    );
-  }
-
-  if (emailResult.skipped) {
-    console.warn("Contact saved, but email skipped: RESEND_API_KEY missing");
-  }
-
-  return NextResponse.json({
-    ok: true,
-    storage: savedRemotely ? "supabase+local" : "local",
-    emailed: emailResult.ok,
-  });
 }
 
 function hashIp(ip: string) {

@@ -18,7 +18,9 @@ export async function sendContactEmail(input: ContactEmailInput) {
     };
   }
 
-  const response = await fetch("https://api.resend.com/emails", {
+  let response: Response;
+  try {
+    response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${apiKey}`,
@@ -49,6 +51,10 @@ export async function sendContactEmail(input: ContactEmailInput) {
       `,
     }),
   });
+  } catch (error) {
+    console.error("Resend request failed", error);
+    return { ok: false as const, skipped: false as const, error: "email request failed" };
+  }
 
   if (!response.ok) {
     const detail = await response.text();

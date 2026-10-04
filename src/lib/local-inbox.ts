@@ -49,8 +49,12 @@ function readStore(): InboxStore {
 }
 
 function writeStore(store: InboxStore) {
-  mkdirSync(dataDir, { recursive: true });
-  writeFileSync(storePath, JSON.stringify(store, null, 2), "utf8");
+  try {
+    mkdirSync(dataDir, { recursive: true });
+    writeFileSync(storePath, JSON.stringify(store, null, 2), "utf8");
+  } catch {
+    // Vercel’s filesystem is read-only. Messages still go to Supabase / email.
+  }
 }
 
 export function saveLocalContactMessage(input: {

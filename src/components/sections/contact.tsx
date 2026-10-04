@@ -51,7 +51,13 @@ export function Contact({ content }: { content: SiteContent }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message, website }),
       });
-      const data = await res.json();
+      const text = await res.text();
+      let data: { error?: string } = {};
+      try {
+        data = text ? (JSON.parse(text) as { error?: string }) : {};
+      } catch {
+        throw new Error("Could not send the message. Please email me instead.");
+      }
       if (!res.ok) throw new Error(data.error || "Failed to send");
       form.reset();
       setStatus("sent");
